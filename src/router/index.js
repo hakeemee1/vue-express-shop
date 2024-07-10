@@ -25,6 +25,11 @@ const routes = [
         name: 'home',
         component: () => import(/* webpackChunkName: "home" */ '../views/HomeView.vue')
       },
+      {
+        path: '/apical',
+        name: 'apical',
+        component: () => import(/* webpackChunkName: "home" */ '../views/ApiCal.vue')
+      },
     ]
   },
 

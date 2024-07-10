@@ -2,8 +2,17 @@
   <div class="hello">
     <Slider />
 
-    <div>
-      <CardItem />
+    <div class="mt-10 mx-10">
+      <v-row>
+        <CardItem />
+        <CardItem />
+        <CardItem />
+        <CardItem />
+        <CardItem />
+        <CardItem />
+        <CardItem />
+        <CardItem />
+      </v-row>
     </div>
   </div>
 </template>
