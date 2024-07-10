@@ -59,7 +59,7 @@
 export default {
   data() {
     return {
-      regisForm: {
+        regisForm: {
         username: "",
         email: "",
         password: "",
@@ -72,7 +72,6 @@ export default {
       passwordRules: [(v) => !!v || "Password is required"],
     };
   },
-  name: "Register",
   methods: {
     async sendRegis() {
       try {
