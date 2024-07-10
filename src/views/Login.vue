@@ -19,7 +19,7 @@
               Facebook
             </v-btn>
             <v-form>
-              <v-text-field label="Email" prepend-icon="mdi-email"></v-text-field>
+              <v-text-field label="Username" prepend-icon="mdi-account"></v-text-field>
               <v-text-field label="Password" type="password" prepend-icon="mdi-lock"></v-text-field>
               <v-checkbox label="Remember me"></v-checkbox>
               <v-btn block color="primary" @click="login">Log in</v-btn>

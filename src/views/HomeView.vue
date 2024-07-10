@@ -1,16 +1,23 @@
 <template>
   <div class="hello">
-    <h1>Home</h1>
-    <h1>333</h1>
+    <Slider />
+
+    <div>
+      <CardItem />
+    </div>
   </div>
 </template>
 
 <script>
-export default {  
-
-}
+const CardItem = () => import("../components/CardItem.vue");
+const Slider = () => import("../components/SliderPromo.vue");
+export default {
+  components: {
+    CardItem,
+    Slider,
+  },
+};
 </script>
 
 <style>
-
 </style>

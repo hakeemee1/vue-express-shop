@@ -35,7 +35,7 @@
                 type="password"
                 prepend-icon="mdi-lock"
               ></v-text-field>
-              <v-btn block color="primary">Register</v-btn>
+              <v-btn block color="primary" @click="$router.push({ name: 'login' })">Register</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -70,13 +70,10 @@ export default {
         (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
       ],
       passwordRules: [(v) => !!v || "Password is required"],
-
     };
   },
   name: "Register",
-  methods: {
-    passCheck() {},
-  },
+  methods: {},
 };
 </script>
   
