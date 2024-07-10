@@ -6,7 +6,6 @@
           Username: {{ user.username }}, Email: {{ user.email }}, Password: {{ user.password }}
         </li>
       </ul>
-      <button @click="getData">Get</button>
     </div>
   </template>
   
@@ -16,8 +15,12 @@
   export default {
     data() {
       return {
-        users: []
+        users: [],
+        
       }
+    },
+    created() {
+      this.getData();
     },
     methods: {
       getData() {

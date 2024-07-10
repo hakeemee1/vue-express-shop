@@ -10,32 +10,32 @@
           <v-card-text>
             <v-form>
               <v-text-field
-                v-model="username"
+              name="username"
+                v-model="regisForm.username"
                 :rules="usernameRules"
+                id="username"
                 label="Username"
                 prepend-icon="mdi-account"
               ></v-text-field>
               <v-text-field
-                v-model="email"
+              name="email"
+                id="email"
+                type="email"
+                v-model="regisForm.email"
                 :rules="emailRules"
                 label="Email"
                 prepend-icon="mdi-email"
               ></v-text-field>
               <v-text-field
-                v-model="password"
+              name="password"
+                v-model="regisForm.password"
+                id="password"
                 :rules="passwordRules"
                 label="Password"
                 type="password"
                 prepend-icon="mdi-lock"
               ></v-text-field>
-              <v-text-field
-                v-model="confirmPassword"
-                :rules="[(v) => v === password || 'Passwords do not match']"
-                label="Confirm Password"
-                type="password"
-                prepend-icon="mdi-lock"
-              ></v-text-field>
-              <v-btn block color="primary" @click="$router.push({ name: 'login' })">Register</v-btn>
+              <v-btn block color="primary" @click="sendRegis()">Register</v-btn>
             </v-form>
           </v-card-text>
         </v-card>
@@ -59,11 +59,11 @@
 export default {
   data() {
     return {
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-
+      regisForm: {
+        username: "",
+        email: "",
+        password: "",
+      },
       usernameRules: [(v) => !!v || "Username is required"],
       emailRules: [
         (v) => !!v || "E-mail is required",
@@ -73,7 +73,17 @@ export default {
     };
   },
   name: "Register",
-  methods: {},
+  methods: {
+    async sendRegis() {
+      try {
+        const {data} =  await this.axios.post("http://localhost:3000/api/v1/register",  this.regisForm);
+        console.log(data);
+        this.$router.push({ name: "login" });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 };
 </script>
   

@@ -30,6 +30,11 @@ const routes = [
         name: 'apical',
         component: () => import(/* webpackChunkName: "home" */ '../views/ApiCal.vue')
       },
+      {
+        path: '/apicon',
+        name: 'apican',
+        component: () => import(/* webpackChunkName: "home" */ '../views/Apicon.vue')
+      }
     ]
   },
 
