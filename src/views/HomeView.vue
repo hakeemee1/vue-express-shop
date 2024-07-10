@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <Slider />
-    <div class="mt-10">
+    <div class="mt-10" >
       <v-row v-for="(item, i) in productsData" :key="i">
         <v-card class="mx-auto mt-10 mx-10" max-width="344">
           <v-img

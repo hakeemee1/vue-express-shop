@@ -34,6 +34,11 @@ const routes = [
         path: '/apicon',
         name: 'apican',
         component: () => import(/* webpackChunkName: "home" */ '../views/Apicon.vue')
+      },
+      {
+        path: '/admin',
+        name: 'admin',
+        component: () => import(/* webpackChunkName: "about" */ '../views/ProductsManage.vue')
       }
     ]
   },
