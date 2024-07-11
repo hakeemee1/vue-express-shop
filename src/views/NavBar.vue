@@ -7,7 +7,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
+      <v-btn icon @click="$router.push('/cart')">
         <v-icon>mdi-cart-arrow-right</v-icon>
       </v-btn>
 
