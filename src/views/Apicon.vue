@@ -110,7 +110,7 @@ export default {
     },
     async savePostData (){
       try {
-        const {data} = await this.axios.post('http://localhost:3000/api/v1/products',this.postdata,{ 
+        const {data} = await this.axios.post('http://localhost:3000/api/v1/products/',this.postdata,{ 
             headers: {
               Authorization: `Bearer ${localStorage.getItem("Token")}`,
             },
@@ -128,7 +128,7 @@ export default {
       try {
         const {data} = await this.axios.put('http://localhost:3000/api/v1/products/'+this.id,this.postdata,{ 
             headers: {
-              authorization: `Bearer ${localStorage.getItem("Token")}`,
+              Authorization: `Bearer ${localStorage.getItem("Token")}`,
             },
             })
             console.log(data);
@@ -158,9 +158,9 @@ export default {
       }
     },
     getData () {
-      this.axios.get('http://localhost:3000/api/v1/products',{ 
+      this.axios.get('http://localhost:3000/api/v1/products/',{ 
             headers: {
-              authorization: `Bearer ${localStorage.getItem("Token")}`,
+              Authorization: `Bearer ${localStorage.getItem("Token")}`,
             },
       }
       ).then((response)=>{
