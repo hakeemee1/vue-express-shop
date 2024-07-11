@@ -167,7 +167,6 @@ export default {
           }
         );
         console.log(data);
-        alert("Create Complete");
         this.getAllProducts();
         this.closeItem();
       } catch (error) {
@@ -187,7 +186,6 @@ export default {
           }
         );
         console.log(data);
-        alert("Update Complete");
         this.getAllProducts();
         this.closeItem();
       } catch (error) {

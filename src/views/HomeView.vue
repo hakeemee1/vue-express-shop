@@ -6,6 +6,7 @@
         <v-col cols="12" md="3" v-for="(item, i) in productsData" :key="i">
           <v-card class="mx-auto mt-10" max-width="344">
             <v-img
+            @click="$router.push(`/product/${item._id}`)"
               :src="item.image"
               height="200px"
             ></v-img>
