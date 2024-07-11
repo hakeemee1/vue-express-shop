@@ -18,7 +18,7 @@
               <v-row>
                 <v-col cols="4">
                   <v-img
-                    src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1693086369818"
+                    :src="item.image"
                     contain
                   ></v-img>
                 </v-col>
@@ -73,6 +73,22 @@
                 v-model="postNewProduct.amount"
               ></v-text-field>
             </v-col>
+            <v-col cols="6">
+              <v-text-field
+                name="description"
+                label="Description"
+                id="description"
+                v-model="postNewProduct.description"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="6">
+              <v-text-field
+                name="image"
+                label="Image URL"
+                id="image"
+                v-model="postNewProduct.image"
+              ></v-text-field>
+            </v-col>
           </v-row>
         </v-card-text>
         <v-card-actions>
@@ -96,11 +112,15 @@ export default {
         product_name: "",
         price: 0,
         amount: 0,
+        description: "",
+        image: "",
       },
       postNewProductDefault: {
         product_name: "",
         price: 0,
         amount: 0,
+        description: "",
+        image: "",
       },
     };
   },
@@ -148,7 +168,7 @@ export default {
         );
         console.log(data);
         alert("Create Complete");
-        this.getData();
+        this.getAllProducts();
         this.closeItem();
       } catch (error) {
         console.log(error);
@@ -168,7 +188,7 @@ export default {
         );
         console.log(data);
         alert("Update Complete");
-        this.getData();
+        this.getAllProducts();
         this.closeItem();
       } catch (error) {
         console.log(error);
@@ -189,7 +209,7 @@ export default {
           );
           console.log(data);
           alert("Delete Complete");
-          this.getData();
+          this.getAllProducts();
         } catch (error) {
           console.log(error);
           alert("error");

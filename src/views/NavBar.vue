@@ -3,7 +3,7 @@
     <v-app-bar color="deep-purple accent-4" dense dark>
      
 
-      <v-toolbar-title>Tech SHOP</v-toolbar-title>
+      <v-toolbar-title @click="$router.push('/home')">Tech SHOP</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -11,8 +11,8 @@
         <v-icon>mdi-cart-arrow-right</v-icon>
       </v-btn>
 
-      <v-app-bar-title>HAIMI</v-app-bar-title>
-      <v-btn icon>
+      <v-app-bar-title>HAKIMI</v-app-bar-title>
+      <v-btn icon @click="$router.push('/admin')">
         <v-icon>mdi-account-circle</v-icon>
       </v-btn>
     </v-app-bar>
